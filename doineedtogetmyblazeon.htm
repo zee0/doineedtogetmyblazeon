@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="do i need blaze orange today? (western mass zone 1)">
+	<meta name="keywords" content="hunting,hiking,blaze,orange,western,massachusetts,mass">
+	<meta name="author" content="zee smith">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<style>
+#horizon {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+}
+
+#content {
+	position: absolute;
+	top: -63px;
+	text-align: center;
+	width: 100%;
+}
+
+#main {
+	line-height: 75px;
+	font-size: 100px;
+	margin: 0;
+}
+
+#animals {
+	margin: 1.25em 25%;
+}
+
+#footer {
+	font-size: smaller;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+}
+
+@media (max-width: 800px) {
+	#animals {
+		margin: 1.25em 1em;
+		}
+}
+</style>
+
+<div id="horizon">
+	<div id="content">
+		<h1 id="main"></h1>
+		<p id="animals"></p>
+	</div>
+</div>
+<div id="footer">
+	<p>only applicable to massachusetts <a href="http://www.mass.gov/eea/docs/dfg/dfw/recreation/licensing-hunting/wmz-map.pdf" target="_blank">zones 1-8</a>. last updated 2018-03-08. not responsible for errors. check <a href="http://www.eregulations.com/massachusetts/huntingandfishing/hunting-season-dates/">official documentation</a>.</p>
+</div>
+
+
+<script>
+	var isSunday = new Date().getDay();
+	var bear1Start = new Date(2018,8,4); // sept 4, 0 == jan.
+	var bear1Stop = new Date(2018,8,23); // sept 22, stop dates need to be day after.
+	var bear2Start = new Date(2018,10,5); // nov 5
+	var bear2Stop = new Date(2018,10,25); // nov 24
+	var bear3Start = new Date(2018,10,26); // nov 26
+	var bear3Stop = new Date(2018,11,9); // dec 8
+	var turkey1Start = new Date(2018,3,30); // april 30
+	var turkey1Stop = new Date(2018,4,27); // may 26
+	var turkey2Start = new Date(2018,9,22); // oct 22
+	var turkey2Stop = new Date(2018,10,4); // nov 3
+	var turkey3Start = new Date(2018,3,28); // april 28
+	var turkey3Stop = new Date(2018,3,29); // april 28
+	var crow1Start = new Date(2018,0,1); // jan 1
+	var crow1Stop = new Date(2018,3,10); // april 9
+	var crow2Start = new Date(2018,6,2); // july 2
+	var crow2Stop = new Date(2019,3,11); // april 10
+	var pheasantgrouse1Start = new Date(2018,9,13); // oct 13
+	var pheasantgrouse1Stop = new Date(2018,10,25); // nov 24
+	var deer1Start = new Date(2018,8,29); // sept 29
+	var deer1Stop = new Date(2018,8,30); // sept 29
+	var deer2Start = new Date(2018,10,1); // nov 1
+	var deer2Stop = new Date(2018,10,4); // nov 3
+	var deer3Start = new Date(2018,9,15); // oct 15
+	var deer3Stop = new Date(2018,10,25); // nov 24
+	var deer4Start = new Date(2018,10,26); // nov 26
+	var deer4Stop = new Date(2018,11,9); // dec 8
+	var deer5Start = new Date(2018,11,10); // dec 10
+	var deer5Stop = new Date(2019,1,1); // dec 31
+	var rabbithare1Start = new Date(2018,0,1); // jan 1
+	var rabbithare1Stop = new Date(2018,2,1); // feb 28
+	var rabbithare2Start = new Date(2018,9,13); // oct 13
+	var rabbithare2Stop = new Date(2019,1,29); // feb 28
+	var squirrel1Start = new Date(2018,8,10); // sept 10
+	var squirrel1Stop = new Date(2019,0,3); // jan 2
+	var bobcat1Start = new Date(2018,0,1); // jan 1
+	var bobcat1Stop = new Date(2018,2,9); // mar 8
+	var bobcat2Start = new Date(2018,11,20); // dec 20
+	var bobcat2Stop = new Date(2019,2,9); // mar 8
+	var coyote1Start = new Date(2018,0,1); // jan 1
+	var coyote1Stop = new Date(2018,2,9); // mar 8
+	var coyote2Start = new Date(2018,9,13); // oct 12
+	var coyote2Stop = new Date(2019,2,9); // mar 8
+	var fox1Start = new Date(2018,0,1); // jan 1
+	var fox1Stop = new Date(2018,2,1); // feb 28
+	var fox2Start = new Date(2018,10,1); // nov 1
+	var fox2Stop = new Date(2019,2,1); // feb 28
+	var raccoon1Start = new Date(2018,0,1); // jan 1
+	var raccoon1Stop = new Date(2018,1,1); // jan 31
+	var raccoon2Start = new Date(2018,9,1); // oct 1
+	var raccoon2Stop = new Date(2019,1,1); // jan 31
+	var opossum1Start = new Date(2018,0,1); // jan 1
+	var opossum1Stop = new Date(2018,1,1); // jan 31
+	var opossum2Start = new Date(2018,9,1); // oct 1
+	var opossum2Stop = new Date(2019,1,1); // jan 31
+	var today = new Date();
+	var blaze = "";
+
+function yarp() {
+	document.body.style.background = "#ff6600";
+	document.getElementById("main").innerHTML = "yarp";
+}
+
+function narp() {
+	document.body.style.background = "#ffffff";
+	document.getElementById("main").innerHTML = "narp";
+}
+
+	if (isSunday == 0) {
+		document.body.style.background = "#ffffff";
+		document.getElementById("main").innerHTML = "you so dumb";
+		document.getElementById("animals").innerHTML = "sunday.";
+	}
+
+	else {
+		if (today >= bear1Start && today <= bear1Stop || today >= bear2Start && today <= bear2Stop || today >= bear3Start && today <= bear3Stop) {
+			yarp();
+			document.getElementById("animals").innerHTML += "motherfucking bears! ";
+			blaze = "1";
+		}
+		if (today >= turkey1Start && today <= turkey1Stop || today >= turkey2Start && today <= turkey2Stop || today >= turkey3Start && today <= turkey3Stop) {
+			yarp();
+			document.getElementById("animals").innerHTML += "holiday chickens!  ";
+			blaze = "1";
+		}
+		if (today >= crow1Start && today <= crow1Stop || today >= crow2Start && today <= crow2Stop) {
+			yarp();
+			document.getElementById("animals").innerHTML += "crow. who hunts crow? psychos. that's who. (also woodland goths) ";
+			blaze = "1";
+		}
+		if (today >= pheasantgrouse1Start && today <= pheasantgrouse1Stop) {
+			yarp();
+			document.getElementById("animals").innerHTML = "pheasant, grouse. fancy! ";
+			blaze = "1";
+		} 
+		if (today >= deer1Start && today <= deer1Stop || today >= deer2Start && today <= deer2Stop || today >= deer3Start && today <= deer3Stop || today >= deer4Start && today <= deer4Stop || today >= deer5Start && today <= deer5Stop) {
+			yarp();
+			document.getElementById("animals").innerHTML += "deer. they're just rats with hooves. ";
+			blaze = "1";
+		} 
+		if (today >= rabbithare1Start && today <= rabbithare1Stop || today >= rabbithare2Start && today <= rabbithare2Stop) {
+			yarp();
+			document.getElementById("animals").innerHTML += "rabbit, hare. watership down was a terrible movie. ";
+			blaze = "1";
+		} 
+		if (today >= squirrel1Start && today <= squirrel1Stop) {
+			yarp();
+			document.getElementById("animals").innerHTML += "squirrel. ";
+			blaze = "1";
+		} 
+		if (today >= bobcat1Start && today <= bobcat1Stop || today >= bobcat2Start && today <= bobcat2Stop ) {
+			yarp();
+			document.getElementById("animals").innerHTML += "bobcat. ";
+			blaze = "1";
+		} 
+		if (today >= coyote1Start && today <= coyote1Stop || today >= coyote2Start && today <= coyote2Stop ) {
+			yarp();
+			document.getElementById("animals").innerHTML += "coyote. ";
+			blaze = "1";
+		} 
+		if (today >= fox1Start && today <= fox1Stop || today >= fox2Start && today <= fox2Stop ) {
+			yarp();
+			document.getElementById("animals").innerHTML += "fox. ";
+			blaze = "1";
+		} 
+		if (today >= raccoon1Start && today <= raccoon1Stop || today >= raccoon2Start && today <= raccoon2Stop ) {
+			yarp();
+			document.getElementById("animals").innerHTML += "raccoon. (a.k.a. trash panda) ";
+			blaze = "1";
+		} 
+		if (today >= opossum1Start && today <= opossum1Stop || today >= opossum2Start && today <= opossum2Stop ) {
+			yarp();
+			document.getElementById("animals").innerHTML += "opossum. makes a good hat.";
+			blaze = "1";
+		} 
+		if (!blaze) {
+			narp();
+		}
+	}
+</script>
+
+</body>
+
+</html>
