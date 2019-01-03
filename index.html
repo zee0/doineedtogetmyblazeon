@@ -12,6 +12,8 @@
 <body>
 
 <style>
+html, body {height: 100%;}
+
 #horizon {
 	position: absolute;
 	top: 50%;
@@ -59,7 +61,7 @@
 	</div>
 </div>
 <div id="footer">
-	<p>only applicable to massachusetts <a href="http://www.mass.gov/eea/docs/dfg/dfw/recreation/licensing-hunting/wmz-map.pdf" target="_blank">zones 1-8</a>. last updated 2018-03-08. not responsible for errors. check <a href="http://www.eregulations.com/massachusetts/huntingandfishing/hunting-season-dates/">official documentation</a>.</p>
+	<p>only applicable to massachusetts <a href="https://www.mass.gov/files/2017-08/wmz-map.pdf" target="_blank">zones 1-8</a>. no data after april 10th, 2019. not responsible for errors. check <a href="http://www.eregulations.com/massachusetts/huntingandfishing/hunting-season-dates/">official documentation</a>.</p>
 </div>
 
 
@@ -119,86 +121,97 @@
 	var opossum1Stop = new Date(2018,1,1); // jan 31
 	var opossum2Start = new Date(2018,9,1); // oct 1
 	var opossum2Stop = new Date(2019,1,1); // jan 31
-	var today = new Date();
+	var lastdate = new Date(2019,3,12); // april 10
+	var today = new Date(); //debug, put dates in here.
 	var blaze = "";
 
-function yarp() {
-	document.body.style.background = "#ff6600";
-	document.getElementById("main").innerHTML = "yarp";
-}
+	function yarp() {
+		document.body.style.background = "#ff6600";
+		document.getElementById("main").innerHTML = "yarp";
+	}
 
-function narp() {
-	document.body.style.background = "#ffffff";
-	document.getElementById("main").innerHTML = "narp";
-}
+	function sorry() {
+		document.body.style.backgroundImage = "repeating-linear-gradient(45deg, #ccc, #ccc 30px, #ff6600 30px, #ff6600 60px)";
+		document.getElementById("main").innerHTML = "sorry";
+	}
+
+	function narp() {
+		document.body.style.background = "#ffffff";
+		document.getElementById("main").innerHTML = "narp";
+	}
 
 	if (isSunday == 0) {
 		document.body.style.background = "#ffffff";
-		document.getElementById("main").innerHTML = "you so dumb";
-		document.getElementById("animals").innerHTML = "sunday.";
+		document.getElementById("main").innerHTML = "sunday.";
+		document.getElementById("animals").innerHTML = "no hunting on sunday.";
 	}
 
 	else {
 		if (today >= bear1Start && today <= bear1Stop || today >= bear2Start && today <= bear2Stop || today >= bear3Start && today <= bear3Stop) {
 			yarp();
-			document.getElementById("animals").innerHTML += "motherfucking bears! ";
+			document.getElementById("animals").innerHTML += "bear. ";
 			blaze = "1";
 		}
 		if (today >= turkey1Start && today <= turkey1Stop || today >= turkey2Start && today <= turkey2Stop || today >= turkey3Start && today <= turkey3Stop) {
 			yarp();
-			document.getElementById("animals").innerHTML += "holiday chickens!  ";
+			document.getElementById("animals").innerHTML += "turkey. ";
 			blaze = "1";
 		}
 		if (today >= crow1Start && today <= crow1Stop || today >= crow2Start && today <= crow2Stop) {
 			yarp();
-			document.getElementById("animals").innerHTML += "crow. who hunts crow? psychos. that's who. (also woodland goths) ";
+			document.getElementById("animals").innerHTML += "crow. ";
 			blaze = "1";
 		}
 		if (today >= pheasantgrouse1Start && today <= pheasantgrouse1Stop) {
 			yarp();
-			document.getElementById("animals").innerHTML = "pheasant, grouse. fancy! ";
+			document.getElementById("animals").innerHTML = "pheasant. grouse. ";
 			blaze = "1";
-		} 
+		}
 		if (today >= deer1Start && today <= deer1Stop || today >= deer2Start && today <= deer2Stop || today >= deer3Start && today <= deer3Stop || today >= deer4Start && today <= deer4Stop || today >= deer5Start && today <= deer5Stop) {
 			yarp();
-			document.getElementById("animals").innerHTML += "deer. they're just rats with hooves. ";
+			document.getElementById("animals").innerHTML += "deer. ";
 			blaze = "1";
-		} 
+		}
 		if (today >= rabbithare1Start && today <= rabbithare1Stop || today >= rabbithare2Start && today <= rabbithare2Stop) {
 			yarp();
-			document.getElementById("animals").innerHTML += "rabbit, hare. watership down was a terrible movie. ";
+			document.getElementById("animals").innerHTML += "rabbit. hare. ";
 			blaze = "1";
-		} 
+		}
 		if (today >= squirrel1Start && today <= squirrel1Stop) {
 			yarp();
 			document.getElementById("animals").innerHTML += "squirrel. ";
 			blaze = "1";
-		} 
+		}
 		if (today >= bobcat1Start && today <= bobcat1Stop || today >= bobcat2Start && today <= bobcat2Stop ) {
 			yarp();
 			document.getElementById("animals").innerHTML += "bobcat. ";
 			blaze = "1";
-		} 
+		}
 		if (today >= coyote1Start && today <= coyote1Stop || today >= coyote2Start && today <= coyote2Stop ) {
 			yarp();
 			document.getElementById("animals").innerHTML += "coyote. ";
 			blaze = "1";
-		} 
+		}
 		if (today >= fox1Start && today <= fox1Stop || today >= fox2Start && today <= fox2Stop ) {
 			yarp();
 			document.getElementById("animals").innerHTML += "fox. ";
 			blaze = "1";
-		} 
+		}
 		if (today >= raccoon1Start && today <= raccoon1Stop || today >= raccoon2Start && today <= raccoon2Stop ) {
 			yarp();
-			document.getElementById("animals").innerHTML += "raccoon. (a.k.a. trash panda) ";
+			document.getElementById("animals").innerHTML += "raccoon. ";
 			blaze = "1";
-		} 
+		}
 		if (today >= opossum1Start && today <= opossum1Stop || today >= opossum2Start && today <= opossum2Stop ) {
 			yarp();
-			document.getElementById("animals").innerHTML += "opossum. makes a good hat.";
+			document.getElementById("animals").innerHTML += "opossum. ";
 			blaze = "1";
-		} 
+		}
+		if (today >= lastdate) {
+			sorry();
+			document.getElementById("animals").innerHTML += "we're past the dates this page has data for.";
+			blaze = "0";
+		}
 		if (!blaze) {
 			narp();
 		}
