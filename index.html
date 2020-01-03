@@ -77,8 +77,8 @@ html, body {height: 100%;}
 	var crow1Stop = new Date(2019,3,11); // april 10
 	var crow2Start = new Date(2019,6,1); // july 1
 	var crow2Stop = new Date(2020,3,11); // april 10 2020
-	var pheasantquailgrouse1Start = new Date(2019,9,19); // oct 19
-	var pheasantquailgrouse1Stop = new Date(2019,11,1); // nov 30
+	var pheasantgrouse1Start = new Date(2019,9,19); // oct 19, zones 11-14 isn't a typo for quail. http://www.eregulations.com/massachusetts/huntingandfishing/upland-game-birds/
+	var pheasantgrouse1Stop = new Date(2019,11,1); // nov 30
 	var turkey1Start = new Date(2019,3,29); // april 29
 	var turkey1Stop = new Date(2019,4,26); // may 25
 	var turkey2Start = new Date(2019,9,21); // oct 21
@@ -165,9 +165,9 @@ html, body {height: 100%;}
 			document.getElementById("animals").innerHTML += "crow. ";
 			blaze = "1";
 		}
-		if (today >= pheasantquailgrouse1Start && today <= pheasantquailgrouse1Stop) {
+		if (today >= pheasantgrouse1Start && today <= pheasantgrouse1Stop) {
 			yarp();
-			document.getElementById("animals").innerHTML = "pheasant. quail. grouse. ";
+			document.getElementById("animals").innerHTML = "pheasant. grouse. ";
 			blaze = "1";
 		}
 		if (today >= turkey1Start && today <= turkey1Stop || today >= turkey2Start && today <= turkey2Stop || today >= turkey3Start && today <= turkey3Stop) {
