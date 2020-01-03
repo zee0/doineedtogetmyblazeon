@@ -61,67 +61,75 @@ html, body {height: 100%;}
 	</div>
 </div>
 <div id="footer">
-	<p>only applicable to massachusetts <a href="https://www.mass.gov/files/2017-08/wmz-map.pdf" target="_blank">zones 1-8</a>. no data after april 10th, 2019. not responsible for errors. check <a href="http://www.eregulations.com/massachusetts/huntingandfishing/hunting-season-dates/">official documentation</a>.</p>
+	<p>only applicable to massachusetts <a href="https://www.mass.gov/files/2017-08/wmz-map.pdf" target="_blank">zones 1-8</a>. no data after april 10th, 2020. not responsible for errors. check <a href="http://www.eregulations.com/massachusetts/huntingandfishing/hunting-season-dates/">official documentation</a>.</p>
 </div>
 
 
 <script>
 	var isSunday = new Date().getDay();
-	var bear1Start = new Date(2018,8,4); // sept 4, 0 == jan.
-	var bear1Stop = new Date(2018,8,23); // sept 22, stop dates need to be day after.
-	var bear2Start = new Date(2018,10,5); // nov 5
-	var bear2Stop = new Date(2018,10,25); // nov 24
-	var bear3Start = new Date(2018,10,26); // nov 26
-	var bear3Stop = new Date(2018,11,9); // dec 8
-	var turkey1Start = new Date(2018,3,30); // april 30
-	var turkey1Stop = new Date(2018,4,27); // may 26
-	var turkey2Start = new Date(2018,9,22); // oct 22
-	var turkey2Stop = new Date(2018,10,4); // nov 3
-	var turkey3Start = new Date(2018,3,28); // april 28
-	var turkey3Stop = new Date(2018,3,29); // april 28
-	var crow1Start = new Date(2018,0,1); // jan 1
-	var crow1Stop = new Date(2018,3,10); // april 9
-	var crow2Start = new Date(2018,6,2); // july 2
-	var crow2Stop = new Date(2019,3,11); // april 10
-	var pheasantgrouse1Start = new Date(2018,9,13); // oct 13
-	var pheasantgrouse1Stop = new Date(2018,10,25); // nov 24
-	var deer1Start = new Date(2018,8,29); // sept 29
-	var deer1Stop = new Date(2018,8,30); // sept 29
-	var deer2Start = new Date(2018,10,1); // nov 1
-	var deer2Stop = new Date(2018,10,4); // nov 3
-	var deer3Start = new Date(2018,9,15); // oct 15
-	var deer3Stop = new Date(2018,10,25); // nov 24
-	var deer4Start = new Date(2018,10,26); // nov 26
-	var deer4Stop = new Date(2018,11,9); // dec 8
-	var deer5Start = new Date(2018,11,10); // dec 10
-	var deer5Stop = new Date(2019,1,1); // dec 31
-	var rabbithare1Start = new Date(2018,0,1); // jan 1
-	var rabbithare1Stop = new Date(2018,2,1); // feb 28
-	var rabbithare2Start = new Date(2018,9,13); // oct 13
-	var rabbithare2Stop = new Date(2019,1,29); // feb 28
-	var squirrel1Start = new Date(2018,8,10); // sept 10
-	var squirrel1Stop = new Date(2019,0,3); // jan 2
-	var bobcat1Start = new Date(2018,0,1); // jan 1
-	var bobcat1Stop = new Date(2018,2,9); // mar 8
-	var bobcat2Start = new Date(2018,11,20); // dec 20
-	var bobcat2Stop = new Date(2019,2,9); // mar 8
-	var coyote1Start = new Date(2018,0,1); // jan 1
-	var coyote1Stop = new Date(2018,2,9); // mar 8
-	var coyote2Start = new Date(2018,9,13); // oct 12
-	var coyote2Stop = new Date(2019,2,9); // mar 8
-	var fox1Start = new Date(2018,0,1); // jan 1
-	var fox1Stop = new Date(2018,2,1); // feb 28
-	var fox2Start = new Date(2018,10,1); // nov 1
-	var fox2Stop = new Date(2019,2,1); // feb 28
-	var raccoon1Start = new Date(2018,0,1); // jan 1
-	var raccoon1Stop = new Date(2018,1,1); // jan 31
-	var raccoon2Start = new Date(2018,9,1); // oct 1
-	var raccoon2Stop = new Date(2019,1,1); // jan 31
-	var opossum1Start = new Date(2018,0,1); // jan 1
-	var opossum1Stop = new Date(2018,1,1); // jan 31
-	var opossum2Start = new Date(2018,9,1); // oct 1
-	var opossum2Stop = new Date(2019,1,1); // jan 31
-	var lastdate = new Date(2019,3,12); // april 10
+	var bear1Start = new Date(2019,8,3); // sept 3, 0 == jan.
+	var bear1Stop = new Date(2019,8,22); // sept 21, stop dates need to be day after.
+	var bear2Start = new Date(2019,10,4); // nov 4
+	var bear2Stop = new Date(2019,10,24); // nov 23
+	var bear3Start = new Date(2019,11,2); // dec 2
+	var bear3Stop = new Date(2019,11,15); // dec 14
+	var crow1Start = new Date(2019,0,1); // jan 1
+	var crow1Stop = new Date(2019,3,11); // april 10
+	var crow2Start = new Date(2019,6,1); // july 1
+	var crow2Stop = new Date(2020,3,11); // april 10 2020
+	var pheasantquailgrouse1Start = new Date(2019,9,19); // oct 19
+	var pheasantquailgrouse1Stop = new Date(2019,11,1); // nov 30
+	var turkey1Start = new Date(2019,3,29); // april 29
+	var turkey1Stop = new Date(2019,4,26); // may 25
+	var turkey2Start = new Date(2019,9,21); // oct 21
+	var turkey2Stop = new Date(2019,10,3); // nov 2
+	var turkey3Start = new Date(2019,3,27); // april 27
+	var turkey3Stop = new Date(2019,3,28); // april 27
+	var deer1Start = new Date(2019,8,28); // sept 28
+	var deer1Stop = new Date(2019,8,29); // sept 28
+	var deer2Start = new Date(2019,09,31); // oct31
+	var deer2Stop = new Date(2019,10,3); // nov 2
+	var deer3Start = new Date(2019,9,21); // oct 21
+	var deer3Stop = new Date(2019,11,1); // nov 30
+	var deer4Start = new Date(2019,11,2); // dec 2
+	var deer4Stop = new Date(2019,11,15); // dec 14
+	var deer5Start = new Date(2019,11,16); // dec 16
+	var deer5Stop = new Date(2020,0,1); // dec 31
+	var rabbit1Start = new Date(2019,0,1); // jan 1
+	var rabbit1Stop = new Date(2019,2,1); // feb 28
+	var rabbit2Start = new Date(2019,9,19); // oct 19
+	var rabbit2Stop = new Date(2020,2,1); // feb 29 2020
+	var hare1_z1_4Start = new Date(2019,0,1) // jan 1
+	var hare1_z1_4Stop = new Date(2019,2,1) // feb 28
+	var hare2_z1_4Start = new Date(2019,9,19) // oct 19
+	var hare2_z1_4Stop = new Date(2020,2,1) // feb 29 2020
+	var hare1_z5_12Start = new Date(2019,0,1) // jan 1
+	var hare1_z5_12Stop = new Date(2019,1,6) // feb 5
+	var hare2_z5_12Start = new Date(2019,9,19) // oct 19
+	var hare2_z5_12Stop = new Date(2020,1,6) // feb 5 2020
+	var squirrel1Start = new Date(2019,8,9); // sept 9
+	var squirrel1Stop = new Date(2020,0,3); // jan 2 2020
+	var bobcat1Start = new Date(2019,0,1); // jan 1
+	var bobcat1Stop = new Date(2019,2,9); // mar 8
+	var bobcat2Start = new Date(2019,11,20); // dec 20
+	var bobcat2Stop = new Date(2020,2,8); // mar 7 2020
+	var coyote1Start = new Date(2019,0,1); // jan 1
+	var coyote1Stop = new Date(2019,2,9); // mar 8
+	var coyote2Start = new Date(2019,9,19); // oct 19
+	var coyote2Stop = new Date(2020,2,8); // mar 7 2020
+	var fox1Start = new Date(2019,0,1); // jan 1
+	var fox1Stop = new Date(2019,2,1); // feb 28
+	var fox2Start = new Date(2019,10,1); // nov 1
+	var fox2Stop = new Date(2020,2,1); // feb 29 2020
+	var opossum1Start = new Date(2019,0,1); // jan 1
+	var opossum1Stop = new Date(2019,1,1); // jan 31
+	var opossum2Start = new Date(2019,9,1); // oct 1
+	var opossum2Stop = new Date(2020,1,1); // jan 31 2020
+	var raccoon1Start = new Date(2019,0,1); // jan 1
+	var raccoon1Stop = new Date(2019,1,1); // jan 31
+	var raccoon2Start = new Date(2019,9,1); // oct 1
+	var raccoon2Stop = new Date(2020,1,1); // jan 31 2020
+	var lastdate = new Date(2020,3,11); // april 10
 	var today = new Date(); //debug, put dates in here.
 	var blaze = "";
 
@@ -152,19 +160,19 @@ html, body {height: 100%;}
 			document.getElementById("animals").innerHTML += "bear. ";
 			blaze = "1";
 		}
-		if (today >= turkey1Start && today <= turkey1Stop || today >= turkey2Start && today <= turkey2Stop || today >= turkey3Start && today <= turkey3Stop) {
-			yarp();
-			document.getElementById("animals").innerHTML += "turkey. ";
-			blaze = "1";
-		}
 		if (today >= crow1Start && today <= crow1Stop || today >= crow2Start && today <= crow2Stop) {
 			yarp();
 			document.getElementById("animals").innerHTML += "crow. ";
 			blaze = "1";
 		}
-		if (today >= pheasantgrouse1Start && today <= pheasantgrouse1Stop) {
+		if (today >= pheasantquailgrouse1Start && today <= pheasantquailgrouse1Stop) {
 			yarp();
-			document.getElementById("animals").innerHTML = "pheasant. grouse. ";
+			document.getElementById("animals").innerHTML = "pheasant. quail. grouse. ";
+			blaze = "1";
+		}
+		if (today >= turkey1Start && today <= turkey1Stop || today >= turkey2Start && today <= turkey2Stop || today >= turkey3Start && today <= turkey3Stop) {
+			yarp();
+			document.getElementById("animals").innerHTML += "turkey. ";
 			blaze = "1";
 		}
 		if (today >= deer1Start && today <= deer1Stop || today >= deer2Start && today <= deer2Stop || today >= deer3Start && today <= deer3Stop || today >= deer4Start && today <= deer4Stop || today >= deer5Start && today <= deer5Stop) {
@@ -172,9 +180,19 @@ html, body {height: 100%;}
 			document.getElementById("animals").innerHTML += "deer. ";
 			blaze = "1";
 		}
-		if (today >= rabbithare1Start && today <= rabbithare1Stop || today >= rabbithare2Start && today <= rabbithare2Stop) {
+		if (today >= rabbit1Start && today <= rabbit1Stop || today >= rabbit2Start && today <= rabbit2Stop) {
 			yarp();
-			document.getElementById("animals").innerHTML += "rabbit. hare. ";
+			document.getElementById("animals").innerHTML += "rabbit. ";
+			blaze = "1";
+		}
+		if (today >= hare1_z1_4Start && today <= hare1_z1_4Stop || today >= hare2_z1_4Start && today <= hare2_z1_4Stop) {
+			yarp();
+			document.getElementById("animals").innerHTML += "hare. (zones 1-4) ";
+			blaze = "1";
+		}
+		if (today >= hare1_z5_12Start && today <= hare1_z5_12Stop || today >= hare2_z5_12Start && today <= hare2_z5_12Stop) {
+			yarp();
+			document.getElementById("animals").innerHTML += "hare. (zones 5-12) ";
 			blaze = "1";
 		}
 		if (today >= squirrel1Start && today <= squirrel1Stop) {
@@ -197,14 +215,14 @@ html, body {height: 100%;}
 			document.getElementById("animals").innerHTML += "fox. ";
 			blaze = "1";
 		}
-		if (today >= raccoon1Start && today <= raccoon1Stop || today >= raccoon2Start && today <= raccoon2Stop ) {
-			yarp();
-			document.getElementById("animals").innerHTML += "raccoon. ";
-			blaze = "1";
-		}
 		if (today >= opossum1Start && today <= opossum1Stop || today >= opossum2Start && today <= opossum2Stop ) {
 			yarp();
 			document.getElementById("animals").innerHTML += "opossum. ";
+			blaze = "1";
+		}
+		if (today >= raccoon1Start && today <= raccoon1Stop || today >= raccoon2Start && today <= raccoon2Stop ) {
+			yarp();
+			document.getElementById("animals").innerHTML += "raccoon. ";
 			blaze = "1";
 		}
 		if (today >= lastdate) {
