@@ -67,8 +67,8 @@ html, body {height: 100%;}
 
 <script type="text/javascript">
 	// deer
-	var deer1Start = new Date("oct 3 2020");
-	var deer1Stop = new Date("oct 3 2020");
+	var deer1Start = new Date("oct 3 2020 00:00"); // single days
+	var deer1Stop = new Date("oct 3 2020 23:59"); // if not specified, hh:mm is assumed to be 00:00, so at 00:01, we're out of the date range and the page will be incorrect. as this is, the page will still be incorrect between 23:59 and midnight for the same reason. thought about looking up sunrise and sunset times for single days, but ain't nobody got time fo' dat.
 	var deer2Start = new Date("oct 29 2020");
 	var deer2Stop = new Date("oct 31 2020");
 	var deer3Start = new Date("nov 30 2020");
@@ -90,16 +90,16 @@ html, body {height: 100%;}
 	var crow2Start = new Date("jul 1 2020");
 	var crow2Stop = new Date("apr 10 2021");
 	// pheasant
-	var pheasant1Start = new Date("sep 5 2020");
-	var pheasant1Stop = new Date("sep 5 2020");
-	var pheasant2Start = new Date("sep 12 2020");
-	var pheasant2Stop = new Date("sep 12 2020");
-	var pheasant3Start = new Date("sep 19 2020");
-	var pheasant3Stop = new Date("sep 19 2020");
-	var pheasant4Start = new Date("sep 26 2020");
-	var pheasant4Stop = new Date("sep 26 2020");
-	var pheasant5Start = new Date("oct 10 2020");
-	var pheasant5Stop = new Date("oct 10 2020");
+	var pheasant1Start = new Date("sep 5 2020 00:00");
+	var pheasant1Stop = new Date("sep 5 2020 23:59");
+	var pheasant2Start = new Date("sep 12 2020 00:00");
+	var pheasant2Stop = new Date("sep 12 2020 23:59");
+	var pheasant3Start = new Date("sep 19 2020 00:00");
+	var pheasant3Stop = new Date("sep 19 2020 23:59");
+	var pheasant4Start = new Date("sep 26 2020 00:00");
+	var pheasant4Stop = new Date("sep 26 2020 23:59");
+	var pheasant5Start = new Date("oct 10 2020 00:00");
+	var pheasant5Stop = new Date("oct 10 2020 23:59");
 	var pheasant6Start = new Date("oct 17 2020");
 	var pheasant6Stop = new Date("nov 28 2020");
   // quail
@@ -109,8 +109,8 @@ html, body {height: 100%;}
 	var grouse1Start = new Date("oct 17 2020");
 	var grouse1Stop = new Date("nov 28 2020");
   // turkey
-	var turkey1Start = new Date("apr 25 2020");
-	var turkey1Stop = new Date("apr 25 2020");
+	var turkey1Start = new Date("apr 25 2020 00:00");
+	var turkey1Stop = new Date("apr 25 2020 23:59");
 	var turkey2Start = new Date("oct 19 2020");
 	var turkey2Stop = new Date("nov 28 2020");
 	var turkey3Start = new Date("apr 27 2020");
@@ -209,12 +209,12 @@ html, body {height: 100%;}
 		}
 		if (today >= quail1Start && today <= quail1Stop) {
 			yarp();
-			document.getElementById("animals").innerHTML = "quail. ";
+			document.getElementById("animals").innerHTML += "quail. ";
 			blaze = "1";
 		}
 		if (today >= grouse1Start && today <= grouse1Stop) {
 			yarp();
-			document.getElementById("animals").innerHTML = "grouse. ";
+			document.getElementById("animals").innerHTML += "grouse. ";
 			blaze = "1";
 		}
 		if (today >= turkey1Start && today <= turkey1Stop || today >= turkey2Start && today <= turkey2Stop || today >= turkey3Start && today <= turkey3Stop) {
@@ -222,7 +222,6 @@ html, body {height: 100%;}
 			document.getElementById("animals").innerHTML += "turkey. ";
 			blaze = "1";
 		}
-
 		if (today >= rabbit1Start && today <= rabbit1Stop || today >= rabbit2Start && today <= rabbit2Stop) {
 			yarp();
 			document.getElementById("animals").innerHTML += "rabbit. ";
@@ -270,7 +269,7 @@ html, body {height: 100%;}
 		}
 		if (today >= lastdate) {
 			sorry();
-			document.getElementById("animals").innerHTML += "we're past the dates this page has data for.";
+			document.getElementById("animals").innerHTML = "we're past the dates this page has data for.";
 			blaze = "0";
 		}
 		if (!blaze) {
